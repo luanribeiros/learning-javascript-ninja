@@ -1,1 +1,2 @@
-# learning-javascript-ninja
+# Learning Javascript Ninja - Challenges
+
