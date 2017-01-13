@@ -15,13 +15,15 @@ var soma = 15 + 8;
 
 // Atribua à variável `soma` todo o valor dela, somando 1, usando o operador de soma abreviado.
 
-soma += 1;
+soma++;
 
 // Atribua à variável `soma` todo o valor dela, multiplicando por 3, usando o operador de multiplicação abreviado.
 
 soma *= 3;
 
 // Qual é o valor da variável `soma` até aqui?
+
+72
 
 // O valor da variável soma até agora é '72'
 soma == 72;
@@ -63,4 +65,3 @@ function divisao(x, y){
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
 
 divisao(10, 2);
-```
