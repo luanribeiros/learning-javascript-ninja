@@ -11,8 +11,7 @@ function myFunc(x, y){
   
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 
-var varFunc = myFunc(5, 5);
-varFunc += 5;
+var varFunc = myFunc(5, 5) + 5;
 
 // Qual o valor atualizado dessa variável?
 
@@ -28,14 +27,14 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 
-function myFunc1(x){
-  myVar1 = x;
+function myFunc1(){
+  myVar1 = 10;
   return " O valor da variável agora é: " + myVar1; 
 }
 
 // Invoque a função criada acima.
 
-myFunc1(10);
+myFunc1();
 
 // Qual o retorno da função? (Use comentários de bloco).
 
@@ -50,10 +49,7 @@ Crie uma função com as seguintes características:
 */
 
 function myFunc2(x, y, z){
-  var a = x;
-  var b = y;
-  var c = z;
-  if(a == null || b == null || c == ull){
+  if(x === undefined || y === undefined || z === undefined){
     return " Preencha todos os valores corretamente! ";
   }else{
     return a * b * c + 2;
@@ -87,32 +83,28 @@ Crie uma função com as seguintes características:
 */
 
 function myFunc3(x, y, z){
-  var a = x;
-  var b = y;
-  var c = z;
-  if(a == null && b == null && c == null){
+  if(x !== undefined && y === undefined && z === undefined){
+    return x;
+  }
+  else if(x !== undefined && y !== undefined && z === undefined){
+    return x + y;
+  }
+  else if( (x !== undefined && y !== undefined && z !== undefined) ){
+    return (x + y) / z;
+  }
+  else if(x === undefined && y === undefined && z === undefined){
     return false;
-  }else if(a != null && b != null && c != null){
-    return (a + b) / c;
-  }else if( (a != null || b != null || c != null) ){
-    var arr = [a, b, c];
-    var arrTam = arr.length;
-    switch(arrTam){
-      case 1:
-      arrTam == 1 return arr; break;
-      case 2:
-      arrTam == 2 return arr[0] + arr[1] + arr[2]; break;
-      default:
-      return null;
-    }
-   }
+  }
+  else{
+    return null;
   }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 
 myFunc3(); // false
-myFunc3(2,2,2); // 2
 myFunc3(2); // 2 
 myFunc3(2,2); // 4
+myFunc3(5,5,2); // 5
+
 ```
