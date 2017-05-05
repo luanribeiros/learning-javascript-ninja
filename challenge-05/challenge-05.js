@@ -17,7 +17,7 @@ function myFunction(arr) {
 Imprima o segundo índice do array retornado pela função criada acima.
 */
 
-myFunction(valoresArr)[1];
+console.log(myFunction(valoresArr)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -26,8 +26,8 @@ no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
 segundo parâmetro.
 */
 
-function myFunction2(arr, 4) {
-    return arr[1], 4;
+function myFunction2(arr, indice) {
+    return arr[indice];
 }
 
 
@@ -35,14 +35,18 @@ function myFunction2(arr, 4) {
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
 
-var numArr = ['Luan', null, underfined, 0, NaN];
+var numArr = ['Luan', 27.5, true, { sobrenome: 'Ribeiro' }, NaN];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
 
-myFunction2(numArr);
+console.log(myFunction2(numArr, 0));
+console.log(myFunction2(numArr, 1));
+console.log(myFunction2(numArr, 2));
+console.log(myFunction2(numArr, 3));
+console.log(myFunction2(numArr, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -60,31 +64,33 @@ os livros.
 */
 
 function book(nomeLivro) {
-    var nomeLivros = {
-        var Neuromancer = {
-                quantidadePaginas: 312,
-                autor: 'Willian Gibson',
-                editora: 'Aleph'
-            },
-            var CountZero = {
-                    quantidadePaginas: 312,
-                    autor: 'Willian Gibson',
-                    editora: 'Aleph'
-                },
-                var MonalisaOverdrive = {
-                    quantidadePaginas: 320,
-                    autor: 'Willian Gibson',
-                    editora: 'Aleph'
-                }
+    var todosLivros = {
+        'Neuromancer': {
+            quantidadePaginas: 312,
+            autor: 'Willian Gibson',
+            editora: 'Aleph'
+        },
+        'CountZero': {
+            quantidadePaginas: 312,
+            autor: 'Willian Gibson',
+            editora: 'Aleph'
+        },
+        'MonalisaOverdrive': {
+            quantidadePaginas: 320,
+            autor: 'Willian Gibson',
+            editora: 'Aleph'
+        }
     };
-    return nomeLivros;
+
+    return !nomeLivro ? todosLivros : todosLivros[nomeLivro];
+
 }
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
 
-book();
+console.log(book());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
@@ -92,8 +98,8 @@ usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
 
-console.log('O livro ' + book().nomeLivros.Neuromancer +
-    'tem ' + book().nomeLivros.Neuromancer.quantidadePaginas + ' Páginas!');
+var nomeLivro = 'Neuromancer';
+console.log('O livro ' + nomeLivro + ' tem ' + book(nomeLivro).quantidadePaginas + ' Páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
@@ -101,7 +107,7 @@ a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
 
-console.log('O autor do livro ' + book().Neuromancer + 'é ' + book.Neuromancer.autor);
+console.log('O autor do livro ' + nomeLivro + ' é ' + book(nomeLivro).autor);
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
@@ -109,4 +115,4 @@ a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
 
-console.log(' O livro ' + book().CountZero + 'foi publicado pela editora ' + book().CountZero.editora);
+console.log(' O livro ' + nomeLivro + ' foi publicado pela editora ' + book(nomeLivro).editora + '.');
