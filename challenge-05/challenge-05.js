@@ -60,39 +60,53 @@ os livros.
 */
 
 function book(nomeLivro) {
-    var nomeLivro = {
+    var nomeLivros = {
         var Neuromancer = {
-            quantidadePaginas: 0;
-            autor: 'Willian Gibson',
-            editora: 'Sei lá'
-        };
-        var Count Zero = {};
-        var Monalisa Overdrive = {};
+                quantidadePaginas: 312,
+                autor: 'Willian Gibson',
+                editora: 'Aleph'
+            },
+            var CountZero = {
+                    quantidadePaginas: 312,
+                    autor: 'Willian Gibson',
+                    editora: 'Aleph'
+                },
+                var MonalisaOverdrive = {
+                    quantidadePaginas: 320,
+                    autor: 'Willian Gibson',
+                    editora: 'Aleph'
+                }
     };
+    return nomeLivros;
 }
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+
+book();
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+
+console.log('O livro ' + book().nomeLivros.Neuromancer +
+    'tem ' + book().nomeLivros.Neuromancer.quantidadePaginas + ' Páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+
+console.log('O autor do livro ' + book().Neuromancer + 'é ' + book.Neuromancer.autor);
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+
+console.log(' O livro ' + book().CountZero + 'foi publicado pela editora ' + book().CountZero.editora);
