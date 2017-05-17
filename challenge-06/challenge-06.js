@@ -5,7 +5,7 @@ Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
 
-var championship = 'Baiano';
+var championship = 'Campeonato Baiano';
 console.log(championship);
 
 /*
@@ -36,22 +36,34 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 
-function showTeamPosition(param) {
+function showTeamPosition(position) {
 
-    return 'O time que está em [POSIÇÃO]º lugar é o [NOME DO TIME].';
+    if (position < 1 || position > 5) {
+        return 'Não temos a informação do time que está nessa posição.';
+    }
+    return 'O time que está em ' + position + ' º lugar é o ' + teams[position - 1] + '.';
 }
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
+
+console.log(showTeamPosition(1));
+console.log(showTeamPosition(2));
+console.log(showTeamPosition(3));
+console.log(showTeamPosition(9));
+
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-// ?
+
+var count = 20;
+while (count <= 30) {
+    console.log(count++);
+}
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -65,9 +77,40 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-// ?
+
+function convertToHex(color) {
+    var hexa;
+    switch (color) {
+        case 'red':
+            hexa = '#FF0000';
+            break;
+        case 'blue':
+            hexa = '#0000FF';
+            break;
+        case 'black':
+            hexa = '#FFFFFF';
+            break;
+        case 'green':
+            hexa = '#FF00FF';
+            break;
+        case 'white':
+            hexa = '#FFFFFF';
+            break;
+        default:
+            return 'Não temos o equivalente hexadecimal para ' + color + '.';
+    }
+    return 'O hexadecimal para a cor ' + color + ' é ' + hexa + '.';
+}
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+
+console.log(convertToHex('red'));
+console.log(convertToHex('green'));
+console.log(convertToHex('blue'));
+console.log(convertToHex('gray'));
+console.log(convertToHex('white'));
+console.log(convertToHex('black'));
+console.log(convertToHex('cyan'));
+console.log(convertToHex('magenta'));
