@@ -1,26 +1,34 @@
 /*
 Crie um array com 5 items (tipos variados).
 */
-// ?
+
+var arr = [ {nome: 'Luan'}, 100, 'Ribeiro', [1, 2, 3], null ];
 
 /*
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
-// ?
+
+function addItem(item){
+	arr.push(item);
+	return arr;
+}
 
 /*
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-// ?
+
+arr.push([ { age: 27}, 'teste', 500 ]);
+console.log(arr);
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
 frase:
 "O segundo elemento do segundo array é [ELEMENTO]."
 */
-// ?
+
+
 
 /*
 Mostre no console quantos itens tem o primeiro array criado, com a frase:
