@@ -14,7 +14,7 @@
 	var five = Number('5');
 	console.log( five + ' é número?', typeof five === 'number' );
 
-	var concat = String('10 + 10');
+	var concat = String(10) + String(10);
 	console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
 
@@ -59,9 +59,19 @@
 	*/
 	
 	function isOperatorValid(operador){
-		typeof operador === '+' || typeof operador === '-' || typeof operador === '*' || typeof operador === '/' || typeof operador === '%' ?
-		return true : return false;	
+		return (operador === '+' || operador === '-' || operador === '*' 
+				|| operador === '/' || operador === '%');
 	}
+
+	/* Outras formas de fazer:
+		function isOperationValid(operador){
+			return operation[operador] !== undefined;
+		}
+
+		function isOperationValid(operador){
+			return !!operation[operador];
+		}
+	*/
 
 	/*
 	Agora vamos criar a calculadora.
@@ -77,17 +87,16 @@
 	*/
 	
 	function calculator(operador){
-		if(typeof operador === '+' || typeof operador === '-' || typeof operador === '*' || typeof operador === '/' || typeof operador === '%'){
-			return function(number1, number2){
-				if(typeof number1 === 'number' || typeof number2 === 'number'){
-					return operation.operador(number1, number2);
-				}else{
-					return false;
-				}
-			};
-		}else{
+		if( !isOperatorValid(operador)){
 			return false;
 		}
+		return function(number1, number2){
+			if(typeof number1 !== 'number' && typeof number2 !== 'number'){
+				return false;
+			}
+			return operation[ operador ](number1, number2);
+		};
+	}
 
 
 	}
@@ -101,7 +110,7 @@
 	*/
 	
 	function showOperationMessage(operador, number1, number2){
-		return 'A operação '+ number1 +' '+ operador+' '+ number2 +' = ';
+		return 'A operação '+ number1 +' '+ operador +' '+ number2 +' = ';
 	}
 
 	/*
@@ -112,12 +121,7 @@
 	*/
 	
 	function showErrorMessage(operador){
-		if (typeof operador === '+' || typeof operador === '-' || typeof operador === '*' || typeof operador === '/' || typeof operador === '%'){
-
-		}else{
-			return 'Operação '+ operador +' não permitida!';
-		}
-
+		return 'Operação '+ operador +' não permitida!'
 	}
 
 	/*
@@ -154,9 +158,12 @@
 	- Se "sum" for "false", mostrar no console a mensagem de erro.
 	*/
 	
-	number1 = 44, number2 = 56;
-	console.log(showOperationMessage(operationSignal, number1, number2), sum(number1, number2) );
-	typeof sum() === false ? console.log(showErrorMessage(operationSignal)) : '';
+	if( sum ){
+		number1 = 44, number2 = 56;
+		console.log(showOperationMessage(operationSignal, number1, number2), sum(number1, number2) );
+	}else{
+		console.log( showErrorMessage(operationSignal) );
+	}
 
 	/*
 	Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
@@ -166,23 +173,39 @@
 	
 	operationSignal = '-';
 	var subtraction = calculator(operationSignal);
-	console.log(showOperationMessage(operationSignal, number1, number2), subtraction(number1, number2) );
-	typeof subtraction() === false ? console.log(showErrorMessage(operationSignal)) : '';
+	if( subtraction ){
+		number1 = 33, number2 = 45;
+		console.log(showOperationMessage(operationSignal, number1, number2), subtraction(number1, number2) );
+	}else{
+		console.log( showErrorMessage(operationSignal) );
+	}
 
 	operationSignal = '*';
 	var multiplication = calculator(operationSignal);
-	console.log(showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2) );
-	typeof multiplication() === false ? console.log(showErrorMessage(operationSignal)) : '';
+	if( multiplication ){
+		number1 = 100, number2 = 20;
+		console.log(showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2) );
+	}else{
+		console.log( showErrorMessage(operationSignal) );
+	}
 
 	operationSignal = '/';
 	var division = calculator(operationSignal);
-	console.log(showOperationMessage(operationSignal, number1, number2), division(number1, number2) );
-	typeof division() === false ? console.log(showErrorMessage(operationSignal)) : '';
+	if( division ){
+		number1 = 100, number2 = 20;
+		console.log(showOperationMessage(operationSignal, number1, number2), division(number1, number2) );
+	}else{
+		console.log( showErrorMessage(operationSignal) );
+	}
 
 	operationSignal = '%';
 	var mod = calculator(operationSignal);
-	console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2) );
-	typeof mod() === false ? console.log(showErrorMessage(operationSignal)) : '';
+	if( mod ){
+		number1 = 100, number2 = 20;
+		console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2) );
+	}else{
+		console.log( showErrorMessage(operationSignal) );
+	}
 
 	/*
 	Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
@@ -190,8 +213,12 @@
 	*/
 	
 	operationSignal = '(';
-	var operacaoTeste = calculator(operationSignal);
-	console.log(showOperationMessage(operationSignal, number1, number2), operacaoTeste(number1, number2) );
-	typeof operacaoTeste() === false ? console.log(showErrorMessage(operationSignal)) : '';
+	var operadorTeste = calculator(operationSignal);
+	if( operadorTeste ){
+		number1 = 100, number2 = 20;
+		console.log(showOperationMessage(operationSignal, number1, number2), operadorTeste(number1, number2) );
+	}else{
+		console.log( showErrorMessage(operationSignal) );
+	}
 
 })();
