@@ -57,19 +57,21 @@
 	/*
 	Remova o último livro, e mostre-o no console.
 	*/
-	// ?
+	
+	console.log(books.pop());
 
 	console.log( '\nAgora sobraram somente os livros:' );
 	/*
 	Mostre no console os livros restantes.
 	*/
-	// ?
+	
+	console.log(books);
 
 	/*
 	Converta os objetos que ficaram em `books` para strings.
 	*/
 	
-	JSON.stringify(books);
+	books = JSON.stringify(books);
 
 	console.log( '\nLivros em formato string:' );
 
@@ -83,7 +85,7 @@
 	Converta os livros novamente para objeto.
 	*/
 	
-	JSON.parse(books);
+	books = JSON.parse(books);
 
 	console.log( '\nAgora os livros são objetos novamente:' );
 
@@ -93,7 +95,11 @@
 	    "[PROPRIEDADE]: [VALOR]"
 	*/
 	
-	console.log(books);
+	for(var = x = 0; x < books.length; x++){
+		for(var prop in books[x]){
+			console.log(prop + ': ' + books[x].prop);
+		}
+	} 
 
 	/*
 	Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
@@ -108,7 +114,7 @@
 	Juntando todos os itens do array, mostre no console seu nome.
 	*/
 	
-	console.log(myName.join());
+	console.log(myName.join(''));
 
 	console.log( '\nMeu nome invertido é:' );
 
@@ -116,7 +122,7 @@
 	Ainda usando o objeto acima, mostre no console seu nome invertido.
 	*/
 	
-	console.log(myName.reverse());
+	console.log(myName.reverse().join(''));
 
 	console.log( '\nAgora em ordem alfabética:' );
 	
@@ -124,6 +130,6 @@
 	Mostre todos os itens do array acima, odenados alfabéticamente.
 	*/
 	
-	console.log(myName.sort());
+	console.log(myName.sort().join()'');
 
 })();
