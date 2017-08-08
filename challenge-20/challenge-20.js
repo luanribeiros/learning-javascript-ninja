@@ -1,4 +1,4 @@
-(function(){
+(function(window, document){
     'use strict';
         /*
     1. Envolva todo o conteúdo desse desafio em uma IIFE.
@@ -16,43 +16,52 @@
     nome, `username` deve receber "Desconhecido".
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
-    // ?
+    
+    var username = prompt('Qual o seu nome?') || 'Desconhecido';
+    alert('Bem vindo' + username + '!');
+        
 
     /*
     Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
     uma variável chamada `email`.
     */
-    // ?
+    
+    var email = prompt('Qual o seu email?');
 
     /*
     - Selecione o input de "Nome", atribuindo-o à uma variável chamada
     `$inputUsername`.
     */
-    // ?
+    
+    var $inputUsername = document.querySelector('input[type="text"]');
 
     /*
     - Selecione o input de "Email", atribuindo-o à uma variável chamada
     `$inputEmail`.
     */
-    // ?
+     var $inputEmail = document.querySelector('input[type="email"]');
 
     /*
     - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
     `$message`.
     */
-    // ?
+    
+    var $message = document.querySelector('textarea');
 
     /*
     - Selecione o botão de envio do formulário, atribuindo-o à uma variável
     chamada `$button`.
     */
-    // ?
+    
+    var $button = document.querySelector('button');
 
     /*
     Preencha os campos de "Nome" e "Email" que estão no documento com os valores
     entrados pelo usuário.
     */
-    // ?
+    
+    $inputUsername.value = username;
+    $inputEmail.value = email;
 
     /*
     Adicione um listener de evento de click ao botão que faça o seguinte:
@@ -78,7 +87,8 @@
     Caso contrário, mostre um alerta com a mensagem:
         - "Não enviado."
     */
-    // ?
+    
+    
 
     /*
     Crie uma função chamada `isValidEmail`, que será usada na validação do
@@ -107,4 +117,6 @@
         - "agua_@evida.br.com"
     */
     // ?
-})();
+
+
+})(window, document);
