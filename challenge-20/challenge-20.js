@@ -88,7 +88,28 @@
         - "Não enviado."
     */
     
-    
+    $button.addEventListener('click', function(event){
+
+        event.preventDefault();
+        
+        if( !$inputUsername.value )
+            return alert( 'Preencha o nome do usuário!' );
+        
+        if( !$inputEmail.value )
+            return alert( 'Preencha o e-mail ');
+        
+        if( !message.value )
+            return alert( 'Preencha a mensagem ');
+        
+        if( !isValidEmail( $inputEmail.value ))
+            return alert( 'Entre com um e-mail válido!' );
+        
+        if( confirm('Tem certeza que deseja enviar o formulário '))
+            return alert( 'Não enviado ');
+        
+        return alert( ' Enviado com sucesso ');
+        
+    }, false);
 
     /*
     Crie uma função chamada `isValidEmail`, que será usada na validação do
@@ -116,7 +137,10 @@
         - "rita-marica@titica.a.b"
         - "agua_@evida.br.com"
     */
-    // ?
+    
+    function isValideEmail( email ){
+        return / ^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$ /.test( email );
+    }
 
 
 })(window, document);
