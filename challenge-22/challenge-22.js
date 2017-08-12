@@ -1,4 +1,4 @@
-(function(win, doc){
+(function(){
 
   'use strict';
 
@@ -83,4 +83,4 @@
     console.log( '\nSomar números entrados pelo usuário:' );
     // ?
 
-})(window, document);
+})();
