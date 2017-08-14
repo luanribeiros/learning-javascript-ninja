@@ -29,7 +29,14 @@
     contexto da função. Use um console.log por pessoa.
     */
     console.log( 'O nome das pessoas é:' );
-    // ?
+    
+    function getFullName(){
+      return this.name + ' ' + this.lastName;    
+    }
+
+    console.log( getFullName.call( pessoa1 ) );
+
+    console.log( getFullName.call( pessoa2 ) );
 
     /*
     Crie uma função chamada `sum`. Essa função pode receber uma lista de
@@ -38,7 +45,11 @@
     Na primeira linha, dentro da função, deixe um console.log para mostrar todos
     os parâmetros passados para essa função.
     */
-    // ?
+    
+    function sum(param){
+      console.log();
+
+    }
 
     /*
     Mostre no console que a função acima funciona, invocando-a em 3 console.log
