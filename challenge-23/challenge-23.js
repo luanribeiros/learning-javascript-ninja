@@ -27,6 +27,6 @@
 	- Ao pressionar o botão "CE", o input deve ficar zerado.
 	*/
 
-
+	
 
 })();
