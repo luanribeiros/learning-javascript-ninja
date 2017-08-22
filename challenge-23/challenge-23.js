@@ -1,4 +1,4 @@
-(function(window, document){
+(function(win, doc){
 	'use strict';
 
 		/*
@@ -27,6 +27,15 @@
 	- Ao pressionar o botão "CE", o input deve ficar zerado.
 	*/
 
-	
+	var $visor = doc.querySelector('[data-js="visor"]');
+	var $buttonNumbers = doc.querySelectorAll('[data-js="button-number"]');
 
-})()window, document;
+	Array.prototype.forEach.call($buttonNumbers, function(button){
+		button.addEventListener('click', handleClickNumber, false);
+	});
+
+	function handleClickNumber(event){
+		$visor.value += this.value;
+	}
+
+})(window, document);
