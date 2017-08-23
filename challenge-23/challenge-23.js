@@ -29,13 +29,30 @@
 
 	var $visor = doc.querySelector('[data-js="visor"]');
 	var $buttonNumbers = doc.querySelectorAll('[data-js="button-number"]');
+	var $buttonOperations = doc.querySelectorAll('[data-js="button-operation]');
+	var $buttonCE = doc.querySelector('[data-is="button-ce"]');
 
 	Array.prototype.forEach.call($buttonNumbers, function(button){
 		button.addEventListener('click', handleClickNumber, false);
 	});
+	Array.prototype.forEach.call($buttonOperations, function(button){
+		button.addEventListener('click', handleClickOperation, false);
+	})
+	$buttonCE.addEventListener('click', handleClickCE, false);
 
-	function handleClickNumber(event){
+	function handleClickNumber(){
 		$visor.value += this.value;
+	}
+
+	function handleClickOperation(){
+		var operations = ['+', '-', 'x', '÷'];
+		if(isLastItemOperation(operations))
+			$visor.value = $visor.value.slice(0, -1);
+		$visor.value += this.value;
+	}
+
+	function handleClickCE(){
+		$visor.value = 0;
 	}
 
 })(window, document);
