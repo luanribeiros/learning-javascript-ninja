@@ -71,6 +71,11 @@
 
 	function handleClickEqual(){
 		removeLastItemIfItIsAnOperator();
+		var allValues = $visor.value.match(/\d+[+x÷-]?/g);
+		var result = allValues.reduce(function(accumulated, actual){
+			return accumulated + actual;
+		});
+		console.log(result);
 	}
 
 })(window, document);
