@@ -12,6 +12,10 @@
 	mesma funcionalidade.
 	*/
 
+	function initialize(){}
+
+	function initEvents(){}
+
 	var $visor = document.querySelector('[data-js="visor"]');
 	var $buttonsNumbers = document.querySelectorAll('[data-js="button-number"]');
 	var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]');
