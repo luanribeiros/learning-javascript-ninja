@@ -1,4 +1,4 @@
-(function(){
+(function(window, document){
 	'use strict';
 		/*
 	Nossa calculadora agora está funcional! A ideia desse desafio é modularizar
@@ -76,4 +76,4 @@
 		});
 	}
 
-})();
+})(window, document);
