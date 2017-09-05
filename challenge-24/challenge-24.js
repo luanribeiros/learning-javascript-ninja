@@ -48,10 +48,16 @@
 	}
 
 	function isLastItemAnOperation( number ) {
-		var operations = ['+', '-', 'x', '÷'];
+		var operations = getOperations();
 		var lastItem = number.split('').pop();
 		return operations.some( function( operator ) {
 			return operator === lastItem;
+		});
+	}
+
+	function getOperations() {
+		return Array.prototype.map.call($buttonsOperations, function(button){
+			return button.value;
 		});
 	}
 
