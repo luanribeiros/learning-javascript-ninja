@@ -16,6 +16,6 @@
 	Tente aplicar na prática alguns dos eventos que estão ali e coloque nesse
 	desafio os experimentos legais que você conseguir desenvolver :D
 	*/
-
+	alert('Hello World');
 
 })(window, document);
