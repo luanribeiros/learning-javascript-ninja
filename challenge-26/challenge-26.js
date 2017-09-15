@@ -27,16 +27,27 @@
 		this.elements = tdocument.querySelectorAll(elements);;
 	}
 
-	DOM.prototype.on  = function on() {};
-	DOM.prototype.off = function off() {};
+	DOM.prototype.on  = function on(eventType, callback) {
+		Array.prototype.forEach.call(this.element, function() {
+			elements.addEventListener(eventType, callback, false);
+		});
+	};
+
+	DOM.prototype.off = function off(eventType, callback) {
+		Array.prototype.forEach.call(this.element, function() {
+			elements.removeEventListener(eventType, callback, false);
+		});
+	};
+
 	DOM.prototype.get = function get() {
 		return this.element;
 	};
 
 	var $a = new DOM('[data-js="link"]');
-	$a.on('click', function(e) {
+	$a.on('click', function handleClick(e) {
 		e.preventDefault();
 		console.log('clicou');
+		$a.off('click', handleClick);
 	});
 
 	console.log('Elementos selecionados:', $a.get());
