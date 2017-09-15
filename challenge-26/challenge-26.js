@@ -24,16 +24,14 @@
 	// ?
 
 	function DOM(elements) {
-		this.elements = this.getDOMElements(elements);
+		this.elements = tdocument.querySelectorAll(elements);;
 	}
-
-	DOM.prototype.getDOMElements = function getDOMElements(elements) {
-		return document.querySelectorAll(elements);
-	};
 
 	DOM.prototype.on  = function on() {};
 	DOM.prototype.off = function off() {};
-	DOM.prototype.get = function get() {};
+	DOM.prototype.get = function get() {
+		return this.element;
+	};
 
 	var $a = new DOM('[data-js="link"]');
 	$a.on('click', function(e) {
