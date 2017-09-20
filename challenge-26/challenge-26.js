@@ -1,4 +1,4 @@
-(function(){
+(function(window, document){
 	'use strict';
 		/*
 	O desafio dessa semana é criar uma mini library (biblioteca) para
@@ -24,7 +24,7 @@
 	// ?
 
 	function DOM(elements) {
-		this.elements = tdocument.querySelectorAll(elements);;
+		this.elements = document.querySelectorAll(elements);;
 	}
 
 	DOM.prototype.on  = function on(eventType, callback) {
@@ -53,4 +53,4 @@
 	console.log('Elementos selecionados:', $a.get());
 	console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
 
-})();
+})(window, document);
