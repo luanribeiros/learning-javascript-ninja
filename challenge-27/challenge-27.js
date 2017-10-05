@@ -92,11 +92,13 @@
 		return Object.prototype.toString.call(param) === '[object String]';
 	};
 
-	DOM.prototype.isBoolean = fucntion isBoolean(param) {
+	DOM.prototype.isBoolean = function isBoolean(param) {
 		return Object.prototype.toString.call(param) === '[object Boolean]';
 	};
 
-
+	DOM.prototype.isNull = function isNull(param) {
+		return Object.prototype.toString.call(param) === '[object Null]';
+	};
 
 	var $a = DOM('[data-js="link"]');
 	console.log($a);
