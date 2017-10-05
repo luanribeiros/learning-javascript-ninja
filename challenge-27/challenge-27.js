@@ -58,6 +58,10 @@
 		return Array.prototype.reduce.apply(this.element, arguments);
 	};
 
+	DOM.prototype.reduceRight = function reduceRight() {
+		return Array.prototype.reduceRight.apply(this.element, arguments);
+	};
+
 	var $a = DOM('[data-js="link"]');
 	console.log($a);
 	$a.forEach( function(item) {
