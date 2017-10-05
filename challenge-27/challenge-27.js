@@ -70,13 +70,15 @@
 		return Array.prototype.some.apply(this.element, arguments);
 	};
 
-	DOM.prototype.isArray = function isArray() {
+	DOM.prototype.isArray = function isArray(param) {
 		return Object.prototype.toString.call(param) === '[object Array]';
 	};
 	//Ou instanciando também funciona -> var dom = new DOM(); e usando console.log(dom.isArray([1, 2, 3]));
 	console.log( DOM.prototype.isArray([1, 2, 3]));
 
-
+	DOM.prototype.isObject = function isObject(param) {
+		return Object.prototype.toString.call(param) === '[object Object]';
+	}
 
 	var $a = DOM('[data-js="link"]');
 	console.log($a);
