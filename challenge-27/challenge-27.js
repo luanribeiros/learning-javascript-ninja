@@ -78,11 +78,16 @@
 
 	DOM.prototype.isObject = function isObject(param) {
 		return Object.prototype.toString.call(param) === '[object Object]';
-	}
+	};
 
 	DOM.prototype.isFunction = function isFunction(param) {
 		return Object.prototype.toString.call(param) === '[object Function]';
-	}
+	};
+
+	DOM.prototype.IsNumber = function isNumber(param) {
+		return Object.prototype.toString.call(param) === '[object Number]';
+	};
+
 	var $a = DOM('[data-js="link"]');
 	console.log($a);
 	$a.forEach( function(item) {
