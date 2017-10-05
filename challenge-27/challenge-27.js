@@ -66,7 +66,9 @@
 		return Array.prototype.every.apply(this.element, arguments);
 	};
 
-
+	DOM.prototype.some = function some() {
+		return Array.prototype.some.apply(this.element, arguments);
+	};
 
 	var $a = DOM('[data-js="link"]');
 	console.log($a);
