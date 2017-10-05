@@ -46,6 +46,10 @@
 		return  Array.prototype.forEach.apply(this.element, arguments);
 	};
 
+	DOM.prototype.map = function map() {
+		return Array.prototype.map.apply(this.element, arguments);
+	}
+
 	var $a = DOM('[data-js="link"]');
 	console.log($a);
 	$a.forEach( function(item) {
