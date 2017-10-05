@@ -92,6 +92,12 @@
 		return Object.prototype.toString.call(param) === '[object String]';
 	};
 
+	DOM.prototype.isBoolean = fucntion isBoolean(param) {
+		return Object.prototype.toString.call(param) === '[object Boolean]';
+	};
+
+
+
 	var $a = DOM('[data-js="link"]');
 	console.log($a);
 	$a.forEach( function(item) {
