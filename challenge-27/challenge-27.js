@@ -54,6 +54,10 @@
 		return Array.prototype.filter.apply(this.element, arguments);
 	};
 
+	DOM.prototype.reduce = function reduce() {
+		return Array.prototype.reduce.apply(this.element, arguments);
+	};
+
 	var $a = DOM('[data-js="link"]');
 	console.log($a);
 	$a.forEach( function(item) {
