@@ -42,5 +42,9 @@
 		return this.element;
 	};
 
+	DOM.prototype.forEach = function forEach() {
+		return  Array.prototype.forEach.apply(this.element, arguments);
+	};
+
 })(window, document);
 
