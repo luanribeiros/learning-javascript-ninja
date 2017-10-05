@@ -46,5 +46,7 @@
 		return  Array.prototype.forEach.apply(this.element, arguments);
 	};
 
+
+
 })(window, document);
 
