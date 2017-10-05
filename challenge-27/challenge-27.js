@@ -46,7 +46,11 @@
 		return  Array.prototype.forEach.apply(this.element, arguments);
 	};
 
-
+	var $a = DOM('[data-js="link"]');
+	console.log($a);
+	$a.forEach( function(item) {
+		console.log(item.firstChild.nodeValue);
+	});
 
 })(window, document);
 
