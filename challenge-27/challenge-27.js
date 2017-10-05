@@ -76,5 +76,20 @@
 		console.log(item.firstChild.nodeValue);
 	});
 
+	var $a = DOM('[data-js="link"]');
+	console.log($a);
+	var dataJs = $a.map(function(map) {
+		return item.getAttribute('data-js');
+	});
+	console.log(dataJs);
+
+	var $a = DOM('[data-js="link"]');
+	console.log($a);
+	var dataJs2 = $a.reduce(function(acc, item, index) {
+		return acc + ' ' + item.getAttribute('data-js') + index;
+	}, 0);
+	console.log(dataJs2);
+
+
 })(window, document);
 
