@@ -80,6 +80,9 @@
 		return Object.prototype.toString.call(param) === '[object Object]';
 	}
 
+	DOM.prototype.isFunction = function isFunction(param) {
+		return Object.prototype.toString.call(param) === '[object Function]';
+	}
 	var $a = DOM('[data-js="link"]');
 	console.log($a);
 	$a.forEach( function(item) {
