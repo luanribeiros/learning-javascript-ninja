@@ -88,6 +88,10 @@
 		return Object.prototype.toString.call(param) === '[object Number]';
 	};
 
+	DOM.prototype.isString = function isString(param) {
+		return Object.prototype.toString.call(param) === '[object String]';
+	};
+
 	var $a = DOM('[data-js="link"]');
 	console.log($a);
 	$a.forEach( function(item) {
