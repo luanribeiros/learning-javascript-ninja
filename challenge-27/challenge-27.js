@@ -48,7 +48,11 @@
 
 	DOM.prototype.map = function map() {
 		return Array.prototype.map.apply(this.element, arguments);
-	}
+	};
+
+	DOM.prototype.filter = function filter() {
+		return Array.prototype.filter.apply(this.element, arguments);
+	};
 
 	var $a = DOM('[data-js="link"]');
 	console.log($a);
