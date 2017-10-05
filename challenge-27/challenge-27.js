@@ -62,6 +62,12 @@
 		return Array.prototype.reduceRight.apply(this.element, arguments);
 	};
 
+	DOM.prototype.every = function every() {
+		return Array.prototype.every.apply(this.element, arguments);
+	};
+
+
+
 	var $a = DOM('[data-js="link"]');
 	console.log($a);
 	$a.forEach( function(item) {
