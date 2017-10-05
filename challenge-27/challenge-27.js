@@ -97,7 +97,8 @@
 	};
 
 	DOM.prototype.isNull = function isNull(param) {
-		return Object.prototype.toString.call(param) === '[object Null]';
+		return Object.prototype.toString.call(param) === '[object Null]'
+		|| Object.prototype.toString.call(param) === '[object Underfined]';
 	};
 
 	var $a = DOM('[data-js="link"]');
