@@ -1,6 +1,5 @@
 (function(window, document){
 	'use strict';
-
 	  /*
   No HTML:
   - Crie um formulário com um input de texto que receberá um CEP e um botão
