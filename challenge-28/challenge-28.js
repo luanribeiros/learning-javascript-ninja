@@ -107,23 +107,6 @@
 		|| Object.prototype.toString.call(param) === '[object Underfined]';
 	};
 
-	var $a = DOM('[data-js="link"]');
-	console.log($a);
-	$a.forEach( function(item) {
-		console.log(item.firstChild.nodeValue);
-	});
-
-	var $a = DOM('[data-js="link"]');
-	console.log($a);
-	var dataJs = $a.map(function(map) {
-		return item.getAttribute('data-js');
-	});
-
-	var $a = DOM('[data-js="link"]');
-	console.log($a);
-	var dataJs2 = $a.reduce(function(acc, item, index) {
-		return acc + ' ' + item.getAttribute('data-js') + index;
-	}, 0);
 
 
 })(window, document);
