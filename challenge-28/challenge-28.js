@@ -108,13 +108,21 @@
 	};
 
 	var $formCEP = new DOM('[data-js="form-cep"]');
+	var $inputCEP =  new DOM('[data-js="input-cep"]');
+	var ajax = new XMLHttpRequest();
 	$formCEP.on('submit', handleSubmitFormCEP);
 
 	function handleSubmitFormCEP(event) {
 		event.preventDefault();
-		var ajax = new XMLHttpRequest();
 		ajax.open('GET', 'http://cep.correiocontrol.com.br/[CEP].json');
 		ajax.send();
+		ajax.addEventListener('readystatechange', handleReadyStateChange);
+	}
+
+	function handleReadyStateChange() {
+		if(ajax.readyState === 4 && ajax.status === 200) {
+			console.log('Popular formulário', ajax.responseText);
+		}
 	}
 
 })(window, document);
