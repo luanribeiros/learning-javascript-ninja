@@ -114,7 +114,11 @@
 
 	function handleSubmitFormCEP(event) {
 		event.preventDefault();
-		ajax.open('GET', 'http://cep.correiocontrol.com.br/[CEP].json');
+		var url = 'http://cep.correiocontrol.com.br/[CEP].json'.replace(
+			'[CEP]',
+			$inputCEP.get()[0].value
+		);
+		ajax.open('GET', url);
 		ajax.send();
 		ajax.addEventListener('readystatechange', handleReadyStateChange);
 	}
