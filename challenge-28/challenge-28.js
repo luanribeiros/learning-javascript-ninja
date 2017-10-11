@@ -107,6 +107,14 @@
 		|| Object.prototype.toString.call(param) === '[object Underfined]';
 	};
 
+	var $formCEP = new DOM('[data-js="form-cep"]');
+	$formCEP.on('submit', handleSubmitFormCEP);
 
+	function handleSubmitFormCEP(event) {
+		event.preventDefault();
+		var ajax = new XMLHttpRequest();
+		ajax.open('GET', 'http://cep.correiocontrol.com.br/[CEP].json');
+		ajax.send();
+	}
 
 })(window, document);
