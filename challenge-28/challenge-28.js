@@ -140,7 +140,7 @@
 	}
 
 	function fillCEPFields() {
-		var data = JSON.parse(ajax.responseText);
+		var data = parseData();
 		console.log(data);
 		var $logradouro = new DOM('[data-js="logradouro"]');
 		var $bairro = new DOM('[data-js="bairro"]');
@@ -154,6 +154,16 @@
 		$cidade.get()[0].textContent = data.localidade;
 		$cep.get()[0].textContent = data.cep;
 
+	}
+
+	function parseData() {
+		var result = null;
+		try {
+			result = JSON.parse(ajax.responseText);
+		}
+		catch(e) {
+			result = null;
+		}
 	}
 
 })(window, document);
