@@ -141,7 +141,9 @@
 
 	function fillCEPFields() {
 		var data = parseData();
-		console.log(data);
+		if(!data)
+			return console.log('DATA ERROR', data);
+		console.log('DATA ERROR', data);
 		var $logradouro = new DOM('[data-js="logradouro"]');
 		var $bairro = new DOM('[data-js="bairro"]');
 		var $estado = new DOM('[data-js="estado"]');
@@ -164,6 +166,7 @@
 		catch(e) {
 			result = null;
 		}
+		return result;
 	}
 
 })(window, document);
