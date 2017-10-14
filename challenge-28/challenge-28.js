@@ -131,12 +131,16 @@
 
 	function handleReadyStateChange() {
 		if( isRequestOk() ) {
-			console.log('Popular formulário', ajax.responseText);
+			fillCEPFields();
 		}
 	}
 
 	function isRequestOk() {
-		ajax.readyState === 4 && ajax.status === 200;
+		return ajax.readyState === 4 && ajax.status === 200;
+	}
+
+	function fillCEPFields() {
+		var data = JSON.parse(ajax.responseText);
 	}
 
 })(window, document);
