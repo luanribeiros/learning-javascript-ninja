@@ -114,13 +114,19 @@
 
 	function handleSubmitFormCEP(event) {
 		event.preventDefault();
-		var url = 'http://cep.correiocontrol.com.br/[CEP].json'.replace(
-			'[CEP]',
-			$inputCEP.get()[0].value
-		);
+
+		var url = getUrl();
+
 		ajax.open('GET', url);
 		ajax.send();
 		ajax.addEventListener('readystatechange', handleReadyStateChange);
+	}
+
+	function getUrl() {
+		return 'http://cep.correiocontrol.com.br/[CEP].json'.replace(
+			'[CEP]',
+			$inputCEP.get()[0].value.replace(/\D/g, '');
+		);
 	}
 
 	function handleReadyStateChange() {
