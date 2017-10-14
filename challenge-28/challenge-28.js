@@ -169,4 +169,12 @@
 		return result;
 	}
 
+	function getMessage(type) {
+		return {
+			loading: 'Buscando informações para o CEP [CEP]...',
+			ok: 'Endereço referente ao CEP [CEP]:',
+			error: 'Não encontramos o endereço para o CEP [CEP].'
+		}
+	}
+
 })(window, document);
