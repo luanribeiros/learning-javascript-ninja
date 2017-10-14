@@ -125,14 +125,18 @@
 	function getUrl() {
 		return 'http://cep.correiocontrol.com.br/[CEP].json'.replace(
 			'[CEP]',
-			$inputCEP.get()[0].value.replace(/\D/g, '');
+			$inputCEP.get()[0].value.replace(/\D/g, '')
 		);
 	}
 
 	function handleReadyStateChange() {
-		if(ajax.readyState === 4 && ajax.status === 200) {
+		if( isRequestOk() ) {
 			console.log('Popular formulário', ajax.responseText);
 		}
+	}
+
+	function isRequestOk() {
+		ajax.readyState === 4 && ajax.status === 200;
 	}
 
 })(window, document);
