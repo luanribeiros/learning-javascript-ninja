@@ -141,6 +141,19 @@
 
 	function fillCEPFields() {
 		var data = JSON.parse(ajax.responseText);
+		console.log(data);
+		var $logradouro = new DOM('[data-js="logradouro"]');
+		var $bairro = new DOM('[data-js="bairro"]');
+		var $estado = new DOM('[data-js="estado"]');
+		var $cidade = new DOM('[data-js="cidade"]');
+		var $cep = new DOM('[data-js="cep"]');
+
+		$logradouro.get()[0].textContent = data.logradouro;
+		$bairro.get()[0].textContent = data.bairro;
+		$estado.get()[0].textContent = data.uf;
+		$cidade.get()[0].textContent = data.localidade;
+		$cep.get()[0].textContent = data.cep;
+
 	}
 
 })(window, document);
