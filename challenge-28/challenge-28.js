@@ -131,10 +131,7 @@
 	}
 
 	function getUrl() {
-		return 'http://cep.correiocontrol.com.br/[CEP].json'.replace(
-			'[CEP]',
-			clearCEP()
-		);
+		return replaceCEP('http://cep.correiocontrol.com.br/[CEP].json');
 	}
 
 	function clearCEP() {
@@ -177,13 +174,16 @@
 	}
 
 	function getMessage(type) {
-		var cep = $cep.get()[0].value;
 		var messages = {
-			loading: 'Buscando informações para o CEP [CEP]...',
-			ok: 'Endereço referente ao CEP [CEP]:',
-			error: 'Não encontramos o endereço para o CEP [CEP].'
+			loading: replaceCEP('Buscando informações para o CEP [CEP]...'),
+			ok: replaceCEP('Endereço referente ao CEP [CEP]:'),
+			error: replaceCEP('Não encontramos o endereço para o CEP [CEP].')
 		};
 		$status.get()[0].textContent = messages[type];
+	}
+
+	function replaceCEP(message) {
+		return message.replace('[CEP]', clearCEP());
 	}
 
 })(window, document);
