@@ -140,8 +140,8 @@
 
 	function handleReadyStateChange() {
 		if( isRequestOk() ) {
-			fillCEPFields();
 			getMessage('ok');
+			fillCEPFields();
 		}
 	}
 
@@ -153,8 +153,7 @@
 		var data = parseData();
 		if(!data) {
 			getMessage('error');
-			clearData();
-			return;
+			data = clearData();
 		}
 
 		$logradouro.get()[0].textContent = data.logradouro;
