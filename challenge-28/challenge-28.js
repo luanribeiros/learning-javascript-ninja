@@ -109,6 +109,13 @@
 
 	var $formCEP = new DOM('[data-js="form-cep"]');
 	var $inputCEP =  new DOM('[data-js="input-cep"]');
+	var $logradouro = new DOM('[data-js="logradouro"]');
+	var $bairro = new DOM('[data-js="bairro"]');
+	var $estado = new DOM('[data-js="estado"]');
+	var $cidade = new DOM('[data-js="cidade"]');
+	var $cep = new DOM('[data-js="cep"]');
+	var $status = new DOM('[data-js="status"]');
+
 	var ajax = new XMLHttpRequest();
 	$formCEP.on('submit', handleSubmitFormCEP);
 
@@ -119,6 +126,7 @@
 
 		ajax.open('GET', url);
 		ajax.send();
+		getMessage('loading');
 		ajax.addEventListener('readystatechange', handleReadyStateChange);
 	}
 
@@ -132,6 +140,7 @@
 	function handleReadyStateChange() {
 		if( isRequestOk() ) {
 			fillCEPFields();
+			getMessage('ok');
 		}
 	}
 
@@ -142,13 +151,8 @@
 	function fillCEPFields() {
 		var data = parseData();
 		if(!data)
-			return console.log('DATA ERROR', data);
+			getMessage('error');
 		console.log('DATA ERROR', data);
-		var $logradouro = new DOM('[data-js="logradouro"]');
-		var $bairro = new DOM('[data-js="bairro"]');
-		var $estado = new DOM('[data-js="estado"]');
-		var $cidade = new DOM('[data-js="cidade"]');
-		var $cep = new DOM('[data-js="cep"]');
 
 		$logradouro.get()[0].textContent = data.logradouro;
 		$bairro.get()[0].textContent = data.bairro;
@@ -175,7 +179,6 @@
 			ok: 'Endereço referente ao CEP [CEP]:',
 			error: 'Não encontramos o endereço para o CEP [CEP].'
 		};
-		var $status = new DOM('[data-js="status"]');
 		$status.textContent = messages[type];
 	}
 
