@@ -151,15 +151,27 @@
 
 	function fillCEPFields() {
 		var data = parseData();
-		if(!data)
+		if(!data) {
 			getMessage('error');
+			clearData();
+			return;
+		}
 
 		$logradouro.get()[0].textContent = data.logradouro;
 		$bairro.get()[0].textContent = data.bairro;
 		$estado.get()[0].textContent = data.uf;
 		$cidade.get()[0].textContent = data.localidade;
 		$cep.get()[0].textContent = data.cep;
+	}
 
+	function clearData() {
+		return {
+			logradouro: '-',
+			bairro: '-',
+			uf: '-',
+			localidade: '-',
+			cep: '-'
+		}
 	}
 
 	function parseData() {
