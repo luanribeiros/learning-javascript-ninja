@@ -152,7 +152,6 @@
 		var data = parseData();
 		if(!data)
 			getMessage('error');
-		console.log('DATA ERROR', data);
 
 		$logradouro.get()[0].textContent = data.logradouro;
 		$bairro.get()[0].textContent = data.bairro;
@@ -179,7 +178,7 @@
 			ok: 'Endereço referente ao CEP [CEP]:',
 			error: 'Não encontramos o endereço para o CEP [CEP].'
 		};
-		$status.textContent = messages[type];
+		$status.get()[0].textContent = messages[type];
 	}
 
 })(window, document);
