@@ -170,11 +170,13 @@
 	}
 
 	function getMessage(type) {
-		return {
+		var messages = {
 			loading: 'Buscando informações para o CEP [CEP]...',
 			ok: 'Endereço referente ao CEP [CEP]:',
 			error: 'Não encontramos o endereço para o CEP [CEP].'
-		}[type];
+		};
+		var $status = new DOM('[data-js="status"]');
+		$status.textContent = messages[type];
 	}
 
 })(window, document);
