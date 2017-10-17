@@ -133,8 +133,12 @@
 	function getUrl() {
 		return 'http://cep.correiocontrol.com.br/[CEP].json'.replace(
 			'[CEP]',
-			$inputCEP.get()[0].value.replace(/\D/g, '')
+			clearCEP()
 		);
+	}
+
+	function clearCEP() {
+		return $inputCEP.get()[0].value.replace(/\D/g, '');
 	}
 
 	function handleReadyStateChange() {
@@ -173,6 +177,7 @@
 	}
 
 	function getMessage(type) {
+		var cep = $cep.get()[0].value;
 		var messages = {
 			loading: 'Buscando informações para o CEP [CEP]...',
 			ok: 'Endereço referente ao CEP [CEP]:',
