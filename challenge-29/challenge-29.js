@@ -36,4 +36,14 @@
   que será nomeado de "app".
   */
 
+	function app() {
+		return {
+			init: function() {
+				console.log('app init');
+			}
+		}
+	}
+
+	app().init();
+
 })(window, document);
