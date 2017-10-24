@@ -1,4 +1,4 @@
-(function(window, document) {
+(function(DOM) {
   'use strict';
 
   /*
@@ -46,4 +46,4 @@
 
 	app().init();
 
-})(window, document);
+})(DOM);
