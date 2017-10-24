@@ -49,8 +49,10 @@
 	var obj = {
 		lala: 'oi',
 		init: function() {
-			return this.lata;
+			return this.lala;
 		}
-	}
+	};
+
+	console.log(obj.init());
 
 })(window.DOM);
