@@ -1,4 +1,4 @@
-(function(DOM) {
+(function($) {
   'use strict';
 
   /*
@@ -55,8 +55,8 @@
 					return;
 
 				var data = JSON.parse(this.responseText);
-				var $companyName = new DOM('[data-js="company-name]"');
-				var $companyPhone = new DOM('[data-js="company-phone]"');
+				var $companyName = $('[data-js="company-name]"');
+				var $companyPhone = $('[data-js="company-phone]"');
 				$companyName.textContent = data.name;
 				$companyPhone.textContent = data.phone;
 				},
@@ -70,4 +70,4 @@
 
 	app().init();
 
-})(window.DOM);
+})(window.$);
