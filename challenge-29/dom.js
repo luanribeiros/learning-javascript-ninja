@@ -3,6 +3,8 @@
 
 	function DOM(elements) {
 		this.elements = document.querySelectorAll(elements);
+		if(this.element.length === 1)
+			return this.get();
 	}
 
 	DOM.isArray = function isArray(param) {
