@@ -38,10 +38,17 @@
 
 	function app() {
 		return {
-			init: function() {
+			init: function init() {
 				console.log('app init');
+			},
+
+			companyInfo: function companyInfo() {
+				var ajax = new XMLHttpRequest();
+				ajax.open('GET', '/company.json', true);
+				ajax.send();
+
 			}
-		}
+		};
 	}
 
 	app().init();
