@@ -46,7 +46,12 @@
 			},
 
 			initEvents: function initEvents() {
+				$('[data-js="form-register"]').on('submit',  this.handleSubmit);
+			},
 
+			handleSubmit: function handleSubmit(e) {
+				e.preventDefault();
+				console.log('submit');
 			},
 
 			companyInfo: function companyInfo() {
@@ -61,8 +66,8 @@
 					return;
 
 				var data = JSON.parse(this.responseText);
-				var $companyName = $('[data-js="company-name]"');
-				var $companyPhone = $('[data-js="company-phone]"');
+				var $companyName = $('[data-js="company-name]"').get();
+				var $companyPhone = $('[data-js="company-phone]"').get();
 				$companyName.textContent = data.name;
 				$companyPhone.textContent = data.phone;
 				},
