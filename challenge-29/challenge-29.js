@@ -46,13 +46,4 @@
 
 	app().init();
 
-	var obj = {
-		lala: 'oi',
-		init: function() {
-			return this.lala;
-		}
-	};
-
-	console.log(obj.init());
-
 })(window.DOM);
