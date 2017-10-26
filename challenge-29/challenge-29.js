@@ -59,6 +59,7 @@
 				var $companyPhone = new DOM('[data-js="company-phone]"');
 				$companyName.get()[0].textContent = data.name;
 				$companyPhone.get()[0].textContent = data.phone;
+
 				},
 
 			isReady: function isReady() {
