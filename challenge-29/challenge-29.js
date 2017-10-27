@@ -57,7 +57,14 @@ var app = (function() {
 			},
 
 			createNewCar: function createNewCar() {
-				return document.createTextNode('oi');
+				var $fragment = document.createDocumentFragment();
+				var $tr = document.createElement('tr');
+				var $tdImage = document.createElement('td');
+				var $tdBrand = document.createElement('td');
+				var $tdYear = document.createElement('td');
+				var $tdPlate = document.createElement('td');
+				var $tdColor = document.createElement('td');
+
 			},
 
 			companyInfo: function companyInfo() {
