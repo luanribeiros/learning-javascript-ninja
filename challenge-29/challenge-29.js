@@ -36,7 +36,7 @@
   que será nomeado de "app".
   */
 
-	function app() {
+var app = (function app() {
 
 		return {
 			init: function init() {
@@ -53,11 +53,11 @@
 				e.preventDefault();
 				console.log('submit');
 				var $tableCar = $('[data-js="table-car"]').get();
-				$tableCar.appendChild(this.createNewCar());
+				$tableCar.appendChild(app.createNewCar());
 			},
 
 			createNewCar: function createNewCar() {
-
+				return document.createTextNode('oi');
 			},
 
 			companyInfo: function companyInfo() {
@@ -83,8 +83,8 @@
 			}
 
 		};
-	}
+	})();
 
-	app().init();
+	app.init();
 
 })(window.$);
