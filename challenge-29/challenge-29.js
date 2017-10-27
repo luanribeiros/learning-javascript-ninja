@@ -52,6 +52,12 @@
 			handleSubmit: function handleSubmit(e) {
 				e.preventDefault();
 				console.log('submit');
+				var $tableCar = $('[data-js="table-car"]').get();
+				$tableCar.appendChild(this.createNewCar());
+			},
+
+			createNewCar: function createNewCar() {
+
 			},
 
 			companyInfo: function companyInfo() {
