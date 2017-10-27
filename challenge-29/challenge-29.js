@@ -36,7 +36,7 @@
   que será nomeado de "app".
   */
 
-var app = (function app() {
+var app = (function() {
 
 		return {
 			init: function init() {
@@ -68,7 +68,7 @@ var app = (function app() {
 			},
 
 			getCompanyInfo: function getCompanyInfo() {
-				if(app().isReady.call(this))
+				if(app.isReady.call(this))
 					return;
 
 				var data = JSON.parse(this.responseText);
