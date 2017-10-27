@@ -60,11 +60,29 @@ var app = (function() {
 				var $fragment = document.createDocumentFragment();
 				var $tr = document.createElement('tr');
 				var $tdImage = document.createElement('td');
+				var $image = document.createElement('img');
 				var $tdBrand = document.createElement('td');
 				var $tdYear = document.createElement('td');
 				var $tdPlate = document.createElement('td');
 				var $tdColor = document.createElement('td');
 
+				//Posso utilizar só com src também
+				$image.setAttribute('src', $('[data-js="image"]').get().value);
+				$tdImage.appendChild($image);
+
+				$tdImage.textContent = $('[data-js="image"]').get().value;
+				$tdBrand.textContent = $('[data-js="brand-model"]').get().value;
+				$tdYear.textContent = $('[data-js="year"]').get().value;
+				$tdPlate.textContent = $('[data-js="plate"]').get().value;
+				$tdColor.textContent = $('[data-js="color"]').get().value;
+
+				$tr.appendChild($tdImage);
+				$tr.appendChild($tdBrand);
+				$tr.appendChild($tdYear);
+				$tr.appendChild($tdPlate);
+				$tr.appendChild($tdColor);
+
+				return $fragment.appendChild($tr);
 			},
 
 			companyInfo: function companyInfo() {
