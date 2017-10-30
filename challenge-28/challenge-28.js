@@ -49,7 +49,7 @@
 			ajax.open('GET', url);
 			ajax.send();
 			getMessage('loading');
-			ajax.addEventListener('readystatechange', handleReadyStateChange);
+			ajax.addEventListener('readystatechange', handleReadyStateChange, false);
 		}
 
 		function getUrl() {
