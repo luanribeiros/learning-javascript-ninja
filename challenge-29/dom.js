@@ -89,4 +89,4 @@
 
 	window.DOM = DOM;
 
-})(window, document);
+})(window.DOM, document);
