@@ -23,7 +23,7 @@
 	O método isNull deve retornar `true` se o valor for null ou undefined.
 	*/
 	function DOM(elements) {
-		this.elements = document.querySelectorAll(elements);;
+		this.elements = document.querySelectorAll(elements);
 	}
 
 	DOM.prototype.on  = function on(eventType, callback) {
